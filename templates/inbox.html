@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox</title>
+</head>
+<body>
+    <h1>Inbox</h1>
+    <a href="{{ url_for('index') }}">Back to home</a>
+    <ul>
+        {% for message in messages %}
+            <li>
+                <strong>Subject:</strong> {{ message.subject }}<br>
+                <strong>From:</strong> {{ message.from }}<br>
+                <strong>Status:</strong> {{ message.status }}<br>
+                <strong>Received:</strong> {{ message.received }}<br>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
